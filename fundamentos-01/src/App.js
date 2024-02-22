@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   return(
     <div className="App">
+      <div className='cardBook'>
 
       <h3>As cavernas de aço</h3>
 
@@ -21,6 +22,8 @@ function App() {
       <p>Isaac Asimov</p>
 
       <img src={correntes} width={300} alt='Capa do livro: "As correntes do espaço"'></img>
+
+      </div>
 
     </div>
   );

@@ -6,41 +6,41 @@ function CreateUser() {
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
 
-    function createUser() {
-
+    function createuser(event) {
+        event.preventDefault()
         let user = JSON.stringify({name:name, job:job});
-        // alert(user);
+        console.log(user);
 
-        // AXIOS AQUI!
+        //AXIOS AQUI!
         axios.post('https://reqres.in/api/users', user)
             .then((response)=>{
+                // alert(response);
                 console.log(response);
-                alert(response);
             })
-            .cacth((error)=>{
+            .catch((error)=>{
+                // alert(error);
                 console.log(error);
-                alert(error);
             });
 
     }
 
     return(
     
-        <form onSubmit={createUser} className="form">
+        <form onSubmit={createuser} className="form">
             <h1>FORMULÁRIO DE CADASTRO</h1>
 
             <input
                 type="text"
                 placeholder="DIGITE SEU NOME AQUI"
                 value={name}
-                onChange={(event)=> {setName(event.target.value)}}
+                onChange={(event)=>{setName(event.target.value)}}
             />
 
             <input
                 type="text"
                 placeholder="DIGITE SUA PROFISSÃO"
                 value={job}
-                onChange={(event)=> {setJob(event.target.value)}}
+                onChange={(event)=>{setJob(event.target.value)}}
             />
 
             <button type="submit">CADASTRAR</button>
